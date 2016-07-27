@@ -13,9 +13,9 @@ $res = mysqli_query($link, $query) or die(mysqli_error($link));
 $res2 = mysqli_query($link, $query2) or die(mysqli_error($link));
 $res3 = mysqli_query($link, $query3) or die(mysqli_error($link));
 
-myoutput($res, "Main Table");
-myoutput($res2, "Таблица 1");
-myoutput($res3, "Таблица 2");
+myoutput($res, "Main Table", "tstyle1");
+myoutput($res2, "Таблица 1", "tstyle2");
+myoutput($res3, "Таблица 2", "tstyle3");
 
 mysqli_close($link);
  
