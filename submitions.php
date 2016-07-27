@@ -3,52 +3,19 @@
 <?php
 
 include 'connectsql.php';
+include 'table_output.php';
 
-
-
-$table = "testB";
-
-
-$query = "SELECT id, name, message, date FROM $table WHERE name != '' AND message != '' ";
- 
+$query = "SELECT id, img, name, message, date FROM $table WHERE name != '' AND message != '' ";
+$query2 = "SELECT id, img, name, message, date FROM $tableX WHERE name != '' AND message != '' ";
+$query3 = "SELECT id, img, name, message, date FROM $tableY WHERE name != '' AND message != '' ";
 
 $res = mysqli_query($link, $query) or die(mysqli_error($link));
- 
-// Выводим данные
+$res2 = mysqli_query($link, $query2) or die(mysqli_error($link));
+$res3 = mysqli_query($link, $query3) or die(mysqli_error($link));
 
-echo ("
-<!DOCTYPE html>
- 
-<head>
- 
-    <title>Вывод данных из MySQL</title>
- 
-
- 
-</head>
- 
-<body>
- 
-<h3>Вывод</h3>
- 
-<table border=\"1\">
-  <td align=\"center\"><b>#</b></td>
-  <td align=\"center\"><b>Дата</b></td>
-  <td align=\"center\"><b>Имя</b></td>
-  <td align=\"center\"><b>Сообщение</b></td>
- </tr>
-");
- 
-while ($row = mysqli_fetch_array($res)) {
-    echo "<tr>\n";
-    echo "<td>".$row['id']."</td>\n";
-    echo "<td>".$row['date']."</td>\n";
-    echo "<td>".$row['name']."</td>\n";
-    echo "<td>".$row['message']."</td>\n</tr>\n";
-}
- 
-echo ("</table>\n");
- 
+myoutput($res, "Main Table");
+myoutput($res2, "Таблица 1");
+myoutput($res3, "Таблица 2");
 
 mysqli_close($link);
  
