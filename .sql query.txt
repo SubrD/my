@@ -1,0 +1,30 @@
+create database test_sub;
+use test_sub;
+
+
+create table testB (
+id int(11) not null auto_increment,
+img varchar(255) not null,
+message text not null,
+date date not null,
+name varchar(255) not null,
+index (id)
+);
+
+create table test1 (
+id int(11) not null auto_increment,
+img varchar(255) not null,
+message text not null,
+date date not null,
+name varchar(255) not null,
+index (id)
+);
+
+create table test2 (
+id int(11) not null auto_increment,
+img varchar(255) not null,
+message text not null,
+date date not null,
+name varchar(255) not null,
+index (id)
+);
