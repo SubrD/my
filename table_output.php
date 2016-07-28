@@ -32,7 +32,7 @@ echo ("
 while ($row = mysqli_fetch_array($arg1)) {
     echo "<tr>\n";
     echo "<td>".$row['id']."</td>\n";
-    printf ("<td><img src='/my/img/%s' width=200px\></td>\n",$row['img']);
+    printf ("<td><img src='/img/%s' width=200px\></td>\n",$row['img']);
     echo "<td>".$row['date']."</td>\n";
     echo "<td>".$row['name']."</td>\n";
     echo "<td>".$row['message']."</td>\n";

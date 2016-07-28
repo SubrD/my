@@ -12,7 +12,7 @@ require_once "captcha.php";
 		
 <!--<script src="/my/js/jquery.min.js"></script>-->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"> </script>
-<script src="/my/js/mygeo.js"></script>
+<script src="../js/mygeo.js"></script>
 
  </head>
  <body>

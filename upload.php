@@ -25,7 +25,7 @@ $max_image_size   = 1024*4*1024;
      // Если файл загружен успешно, перемещаем его
      // из временной директории в конечную, где?
 
-     if (@move_uploaded_file($filename, "../my/img/".$arg["filename"]["name"])) {
+     if (@move_uploaded_file($filename, "img/".$arg["filename"]["name"])) {
           
          $finalfile = $arg["filename"]["name"];
 
