@@ -21,7 +21,7 @@ $msg = $_POST["msg1"];
 $mygeo = $_POST["geo"];
 
 
-$res = mysqli_query($link, "SELECT COUNT(*) FROM $table");
+$res = mysqli_query($link, "SELECT COUNT(*) FROM $table") or myerror($table, $link);
 $row = mysqli_fetch_row($res);
 $total = $row[0];
 
@@ -39,8 +39,10 @@ $query2 = "INSERT INTO $table_write SET name='".$name1."', message='".$msg."', i
 
 
 //выполняем запрос
-mysqli_query($link, $query) or die(mysqli_error($link));
-mysqli_query($link, $query2) or die(mysqli_error($link));
+mysqli_query($link, $query) or myerror($table, $link);
+mysqli_query($link, $query2) or myerror($table_write, $link);
+
+
 
 
 //разъединяемся
@@ -50,9 +52,9 @@ $query2 = "SELECT id, img, name, message, geo, date FROM $tableX WHERE name != '
 $query3 = "SELECT id, img, name, message, geo, date FROM $tableY WHERE name != '' AND message != '' ";
 
 
-$res = mysqli_query($link, $query) or die(mysqli_error($link));
-$res2 = mysqli_query($link, $query2) or die(mysqli_error($link));
-$res3 = mysqli_query($link, $query3) or die(mysqli_error($link));
+$res = mysqli_query($link, $query) or myerror($table, $link);
+$res2 = mysqli_query($link, $query2) or myerror($tableX, $link);
+$res3 = mysqli_query($link, $query3) or myerror($tableY, $link);
 
 
 

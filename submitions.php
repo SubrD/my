@@ -9,9 +9,9 @@ $query = "SELECT id, img, name, message, geo, date FROM $table WHERE name != '' 
 $query2 = "SELECT id, img, name, message, geo, date FROM $tableX WHERE name != '' AND message != '' ";
 $query3 = "SELECT id, img, name, message, geo, date FROM $tableY WHERE name != '' AND message != '' ";
 
-$res = mysqli_query($link, $query) or die(mysqli_error($link));
-$res2 = mysqli_query($link, $query2) or die(mysqli_error($link));
-$res3 = mysqli_query($link, $query3) or die(mysqli_error($link));
+$res = mysqli_query($link, $query) or myerror($table, $link);
+$res2 = mysqli_query($link, $query2) or myerror($tableX, $link);
+$res3 = mysqli_query($link, $query3) or myerror($tableY, $link);
 
 myoutput($res, "Main Table", "tstyle1");
 myoutput($res2, "Таблица 1", "tstyle2");
