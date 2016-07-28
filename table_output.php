@@ -1,3 +1,6 @@
+<script src="js/jquery.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"> </script>
+
 <?php
 
 // Выводим данные
@@ -45,3 +48,48 @@ echo ("</table></div>\n");
 }
 
 ?>
+
+<a href="javascript:void(0)" onclick="mymapfunc($row['geo'])">Show popup</a>
+
+<div class="b-popup" id="popup1">
+<div class="b-popup-content" id="map" >
+
+    </div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    PopUpHide();
+});
+function PopUpShow(){
+    $("#popup1").show();
+}
+function PopUpHide(){
+    $("#popup1").hide();
+}
+
+document.getElementById("popup1").onclick = function () {
+PopUpHide();
+}
+
+</script>
+<script type="text/javascript">
+
+function mymapfunc(arg1){
+
+PopUpShow();
+
+var moscow_map;
+
+      ymaps.ready(function(){
+        moscow_map = new ymaps.Map("map", {
+            center: [arg1],
+            zoom: 10
+        });}
+)
+
+    }
+</script>
+
+</body>

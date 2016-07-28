@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
-
 <?php
 	session_start();
 	include 'connectsql.php';
