@@ -50,6 +50,7 @@ MyBehavior.prototype = {
         /* this._parent - родителем для поведения является менеджер поведений;
            this._parent.getMap() - получаем ссылку на карту;
            this._parent.getMap().events.add - добавляем слушатель события на карту. */
+        this._parent.getMap().events.add('click', this._onClick, this);
         this._parent.getMap().geoObjects.events.add('click', this._onClick, this);
     },
     disable: function () {
