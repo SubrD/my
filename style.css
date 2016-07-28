@@ -56,10 +56,10 @@ input[type="text"] {
 
 a
 {
-text-decoration: none;
-color:white;
+
+color:black;
 }
-table { width: 500px; border-collapse: collapse; margin: 0px auto; background: #E6E6E6; }
+table { width: 550px; border-collapse: collapse; margin: 0px auto; background: #E6E6E6; }
 td { padding: 5px; text-align: center; vertical-align: middle; }
 .buttons { width: auto; border: double 1px #666666; background: #D6D6D6; }
 
@@ -67,20 +67,22 @@ td { padding: 5px; text-align: center; vertical-align: middle; }
 .tstyle1
 
 {
-float:left;
 
 }
 
 .tstyle2
 {
 
-float:right;
+/*float:left;
 width: 500px;
 margin-right: auto;
 margin-left: auto;
-
+*/
 .tstyle3
 {
-float:right;
-
+/*float:right;
+width: 500px;
+margin-right: auto;
+margin-left: auto;
+*/
 }

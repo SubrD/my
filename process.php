@@ -18,6 +18,7 @@ $finalfile = upload2 ($_FILES);
 $cdate = date("Y-m-d");
 $name1 = $_POST['name'];
 $msg = $_POST["msg1"];
+$mygeo = $_POST["geo"];
 
 
 $res = mysqli_query($link, "SELECT COUNT(*) FROM $table");
@@ -28,9 +29,9 @@ $total % 2 == 0 ? $table_write = "test1" : $table_write = "test2";
 
 
 if ($msg != "" and $name1 != "")
-$query = "INSERT INTO $table SET name='".$name1."', message='".$msg."', img='".$finalfile."',date='$cdate'";
+$query = "INSERT INTO $table SET name='".$name1."', message='".$msg."', img='".$finalfile."',geo='".$mygeo."',date='$cdate'";
 else die(header ('Location: index.php'));
-$query2 = "INSERT INTO $table_write SET name='".$name1."', message='".$msg."', img='".$finalfile."', date='$cdate'";
+$query2 = "INSERT INTO $table_write SET name='".$name1."', message='".$msg."', img='".$finalfile."', geo='".$mygeo."', date='$cdate'";
 
 
 //$query2 = "INSERT INTO $tableX (id, name, message, date) SELECT id, name, message, date FROM $table WHERE MOD(id,2) = 0";
@@ -44,9 +45,9 @@ mysqli_query($link, $query2) or die(mysqli_error($link));
 
 //разъединяемся
 
-$query = "SELECT id, img, name, message, date FROM $table WHERE name != '' AND message != '' ";
-$query2 = "SELECT id, img, name, message, date FROM $tableX WHERE name != '' AND message != '' ";
-$query3 = "SELECT id, img, name, message, date FROM $tableY WHERE name != '' AND message != '' ";
+$query = "SELECT id, img, name, message, geo, date FROM $table WHERE name != '' AND message != '' ";
+$query2 = "SELECT id, img, name, message, geo, date FROM $tableX WHERE name != '' AND message != '' ";
+$query3 = "SELECT id, img, name, message, geo, date FROM $tableY WHERE name != '' AND message != '' ";
 
 
 $res = mysqli_query($link, $query) or die(mysqli_error($link));

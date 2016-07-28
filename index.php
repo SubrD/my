@@ -1,5 +1,4 @@
 <?php
-
 require_once "captcha.php";
 ?>
 
@@ -10,6 +9,11 @@ require_once "captcha.php";
 <html>
 <head>
   <title>Форма</title>
+		
+<!--<script src="/my/js/jquery.min.js"></script>-->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"> </script>
+<script src="/my/js/mygeo.js"></script>
+
  </head>
  <body>
 
@@ -26,18 +30,30 @@ require_once "captcha.php";
 <br><br>
 Загрузите ваш аватар: <input type="file" name="filename">
 <br><br>
+
+Ваше раположение:
+<input type="text" name="geo" id="geoid" />
+<br><br>
+
 Введите капчу:
 
-<input class="input" type="text" name="norobot" />
-		<br><br><span style="background:white; font-size: 27px; "><?=$_SESSION['outputrand'] ?></span>
-		<input type ="submit" id="submitid" Click here/>
-<br><br></form>
+<input type="text" name="norobot" style="width: 50px" /><input type ="submit" id="submitid" Click here/>
 
+<br><br><span style="background:white; font-size: 27px; "><?=$_SESSION['outputrand'] ?></span>
+
+
+
+
+
+</form>
 
 <a href="submitions.php" name="test">Посмотреть отзывы</a> 
 
 
 </div>
+
+<br>
+<div id="map" style="width:400px; height:300px"></div>
 
 <!-- очищаем сесионную переменую, но зачем? //-->
 <?php unset ($_SESSION['outputrand']);?>

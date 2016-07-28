@@ -5,9 +5,9 @@
 include 'connectsql.php';
 include 'table_output.php';
 
-$query = "SELECT id, img, name, message, date FROM $table WHERE name != '' AND message != '' ";
-$query2 = "SELECT id, img, name, message, date FROM $tableX WHERE name != '' AND message != '' ";
-$query3 = "SELECT id, img, name, message, date FROM $tableY WHERE name != '' AND message != '' ";
+$query = "SELECT id, img, name, message, geo, date FROM $table WHERE name != '' AND message != '' ";
+$query2 = "SELECT id, img, name, message, geo, date FROM $tableX WHERE name != '' AND message != '' ";
+$query3 = "SELECT id, img, name, message, geo, date FROM $tableY WHERE name != '' AND message != '' ";
 
 $res = mysqli_query($link, $query) or die(mysqli_error($link));
 $res2 = mysqli_query($link, $query2) or die(mysqli_error($link));

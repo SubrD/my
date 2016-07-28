@@ -1,19 +1,3 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-		<!--<script src="/my/js/jquery.min.js"></script>-->
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"> </script>
-
-
-
-    </head>
-
-<body>
-    <p>Карта</p>
-    <div id="map" style="width:400px; height:300px"></div>
-
-<script>
-
-
 ymaps.ready(init);
 
 function init() {
@@ -66,7 +50,7 @@ MyBehavior.prototype = {
         /* this._parent - родителем для поведения является менеджер поведений;
            this._parent.getMap() - получаем ссылку на карту;
            this._parent.getMap().events.add - добавляем слушатель события на карту. */
-        this._parent.getMap().events.add('click', this._onClick, this);
+        this._parent.getMap().geoObjects.events.add('click', this._onClick, this);
     },
     disable: function () {
         this._parent.getMap().events.remove('click', this._onClick, this);
@@ -76,7 +60,9 @@ MyBehavior.prototype = {
     // Получает родителя
     getParent: function () { return this._parent; },
     _onClick: function (e) {
+
         var coords = e.get('coords');
+        document.getElementById('geoid').value = coords;
 
     }
 };
@@ -88,11 +74,3 @@ myMap.behaviors.enable('mybehavior');
 
 
 }
-
-    
-
-        </script>
-
-</body>
-
-</html>
