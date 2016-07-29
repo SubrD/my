@@ -44,7 +44,7 @@ else:
 <a href="submitions.php" name="test">Посмотреть отзывы</a> 
 
 </div>
-
+<a href="logout.php">Выйти</a>
 <div class="b-popup" onclick="javascript:PopUpHide();" id="popup2">
 <div class="b-popup-content2" >
 <h2>Добро пожаловать, <span><?php echo $_SESSION['session_username'];?>! </span></h2>
