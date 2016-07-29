@@ -54,10 +54,7 @@ echo ("</table></div>\n");
 
 <div class="b-popup" id="popup1">
 
-
-
 <div class="b-popup-content" id="map" >
-
     </div>
 </div>
 
@@ -91,9 +88,13 @@ var tempvar2 = parseFloat(arr[1]);
             var myPlacemark = new  ymaps.Placemark([tempvar, tempvar2]);
             myMap.geoObjects.add(myPlacemark);
 
-            document.getElementById("popup1").onclick = function () {
-myMap.destroy();
-PopUpHide();
+            document.onclick = function () {
+if(event.target.nodeName !== 'YMAPS'){
+        myMap.destroy();
+        PopUpHide();
+    }
+
+
 }
 
       }
