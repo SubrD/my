@@ -16,7 +16,8 @@ else:
 
 
 	if (md5($_POST['norobot']) == $_SESSION['rand'])	{ 
-	
+
+	$_SESSION['rand'] = 0;
 
 $finalfile = upload2 ($_FILES);
 
@@ -68,6 +69,8 @@ $res3 = mysqli_query($link, $query3) or myerror($tableY, $link);
 myoutput($res, "Main Table", "tstyle1");
 myoutput($res2, "Таблица 1", "tstyle2");
 myoutput($res3, "Таблица 2", "tstyle3");
+
+
 
 mysqli_close($link);
  
