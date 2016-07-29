@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($arg1)) {
     echo "<td>".$row['date']."</td>\n";
     echo "<td>".$row['name']."</td>\n";
     echo "<td>".$row['message']."</td>\n";
-    printf ("<td><a href=\"https://yandex.ru/maps/?text=%s\"\>Координаты</a></td>\n</tr>\n",$row['geo']);
+    printf ("<td><a href=\"javascript:showme('%s')\">Координты</a></td>\n</tr>\n",$row['geo']);
 }
 
 
@@ -49,15 +49,21 @@ echo ("</table></div>\n");
 
 ?>
 
-<a href="javascript:void(0)" onclick="mymapfunc($row['geo'])">Show popup</a>
+
+<a href="javascript:showme('54.30418764786716,48.384635671874975')">Show popup</a>
 
 <div class="b-popup" id="popup1">
+
+
+
 <div class="b-popup-content" id="map" >
 
     </div>
 </div>
 
 <script>
+
+
 
 $(document).ready(function(){
     PopUpHide();
@@ -69,27 +75,33 @@ function PopUpHide(){
     $("#popup1").hide();
 }
 
-document.getElementById("popup1").onclick = function () {
+
+
+function showme(str_arg) {
+var arr = str_arg.split(',');
+var tempvar = parseFloat(arr[0]);
+var tempvar2 = parseFloat(arr[1]);
+
+
+      ymaps.ready(function(){
+        var myMap = new ymaps.Map("map", {
+            center: [tempvar,tempvar2],
+            zoom: 10
+        });
+            var myPlacemark = new  ymaps.Placemark([tempvar, tempvar2]);
+            myMap.geoObjects.add(myPlacemark);
+
+            document.getElementById("popup1").onclick = function () {
+myMap.destroy();
 PopUpHide();
 }
 
-</script>
-<script type="text/javascript">
-
-function mymapfunc(arg1){
-
+      }
+)
 PopUpShow();
 
-var moscow_map;
+}
 
-      ymaps.ready(function(){
-        moscow_map = new ymaps.Map("map", {
-            center: [arg1],
-            zoom: 10
-        });}
-)
-
-    }
 </script>
 
 </body>

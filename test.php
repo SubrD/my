@@ -12,7 +12,7 @@
 <body>
 
 
-<a href="javascript:PopUpShow()">Show popup</a>
+    <a href="javascript:PopUpShow()">Show popup</a>
 
 <div class="b-popup" id="popup1">
 <div class="b-popup-content" id="map" >
@@ -36,6 +36,8 @@ function PopUpHide(){
 document.getElementById("popup1").onclick = function () {
 PopUpHide();
 }
+
+
 
 </script>
 <script type="text/javascript">

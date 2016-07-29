@@ -1,6 +1,4 @@
 ymaps.ready(init);
-   var myMap,
-       myPlacemark;
 
 function init() {
     var geolocation = ymaps.geolocation,
@@ -67,7 +65,6 @@ MyBehavior.prototype = {
         var coords = e.get('coords');
         document.getElementById('geoid').value = coords;
         //var eMap = e.get('target');
-        });
     }
 };
 
