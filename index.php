@@ -77,7 +77,7 @@ return false;
 }
 
 $(document).ready(function(){
-    PopUpShow();
+    PopUpHide();
 });
 function PopUpShow(){
     $("#popup2").show();
