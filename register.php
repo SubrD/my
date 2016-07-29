@@ -36,12 +36,12 @@ include("include/connectsql.php");
  $email=htmlspecialchars($_POST['email']);
  $username=htmlspecialchars($_POST['username']);
  $password=htmlspecialchars($_POST['password']);
- $query=mysqli_query($link, "SELECT * FROM users_db WHERE username='".$username."'") or myerror("users_db", $link);
+ $query=mysqli_query($link, "SELECT * FROM users_db WHERE username='".$username."'");
  $numrows=mysqli_num_rows($query);
 if($numrows==0)
    {
 	$sql="INSERT INTO users_db (email, username, password) VALUES ('$email', '$username', '$password')";
-  $result=mysqli_query($link, $sql) or myerror("users_db", $link);
+  $result=mysqli_query($link, $sql) or mysqli_error($link);
  if($result){
 	$message = "Account Successfully Created";
 } else {

@@ -38,7 +38,7 @@ type="text" value=""></label></p>
 	if(!empty($_POST['username']) && !empty($_POST['password'])) {
 	$username=htmlspecialchars($_POST['username']);
 	$password=htmlspecialchars($_POST['password']);
-	$query = mysqli_query($link, "SELECT * FROM users_db WHERE username='".$username."' AND password='".$password."'") or myerror("users_db", $link);
+	$query = mysqli_query($link, "SELECT * FROM users_db WHERE username='".$username."' AND password='".$password."'") or mysqli_error($link);
 	$numrows=mysqli_num_rows($query);
 	if($numrows!=0)
  {
