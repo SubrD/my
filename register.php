@@ -1,3 +1,12 @@
+<?php
+
+if(!isset($_SESSION["session_username"])):
+header("location:login.php");
+else:
+
+?>
+
+
 <?php 
 
 include("include/header.php");

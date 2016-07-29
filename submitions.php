@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["session_username"])):
+header("location:login.php");
+else:
+
+?>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <body class = "coolpages">
 
@@ -27,3 +35,5 @@ echo ("<a href=\"index.php\">Вернуться</a>");
 ?>
 
 </body class = "coolpages">
+
+<?php endif; ?>

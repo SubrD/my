@@ -1,7 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION["session_username"])):
+header("location:login.php");
+else:
+
+?>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <body class = "coolpages">
 <?php
-	session_start();
+	
 	include 'include/connectsql.php';
     include 'include/upload.php';
     include 'include/table_output.php';
@@ -75,3 +83,5 @@ echo ("<a href=\"index.php\">Вернуться</a>");
 ?>
 
 </body>
+
+<?php endif; ?>
