@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="style.css">
-
+<body class = "coolpages">
 <?php
 	session_start();
-	include 'connectsql.php';
-    include 'upload.php';
-    include 'table_output.php';
+	include 'include/connectsql.php';
+    include 'include/upload.php';
+    include 'include/table_output.php';
 
 
 	if (md5($_POST['norobot']) == $_SESSION['rand'])	{ 
@@ -73,3 +73,5 @@ echo ("<a href=\"index.php\">Вернуться</a>");
 	}
 
 ?>
+
+</body>

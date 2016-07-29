@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="style.css">
-
+<body class = "coolpages">
 
 <?php
 
-include 'connectsql.php';
-include 'table_output.php';
+include 'include/connectsql.php';
+include 'include/table_output.php';
 
 $query = "SELECT id, img, name, message, geo, date FROM $table WHERE name != '' AND message != '' ";
 $query2 = "SELECT id, img, name, message, geo, date FROM $tableX WHERE name != '' AND message != '' ";
@@ -25,3 +25,5 @@ echo ("<a href=\"index.php\">Вернуться</a>");
 
 
 ?>
+
+</body class = "coolpages">

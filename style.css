@@ -1,8 +1,149 @@
-body
+  body {
+   background: #d5d8dc;
+   color: #777;
+  }
+
+    #welcome {
+  width: 500px;
+  padding: 30px;
+  background: #fff;
+  margin: 160px auto 0;
+   }
+
+.b-popup{
+    width:100%;
+    min-height:130%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+    width:400px;
+    height: 450px;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.b-popup .b-popup-content2{
+    margin:40px auto 0px auto;
+    width:300px;
+    height: 110px;
+    text-align: center;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.coolpages
 
 {
-	background: #8A939D;
+  background: #b9bdc2;
+  color: #171717;
 }
+
+  .mlogin {
+   margin: 170px auto 0;
+  }
+
+  .mregister {
+  margin: 80px auto 0;
+  }
+
+
+
+  .container {
+  padding: 25px 16px 25px 10px;
+  font-weight: 400;
+  overflow: hidden;
+  width: 350px;
+  height: auto;
+  background: #fff;
+  }
+
+
+  .container h1 {
+  color: #777;
+  text-align: center;
+  font-weight: 300;
+   border: 1px solid #c7c9ca;
+   margin-top: 13px;
+  }
+
+  .container label {
+  color: #777;
+  font-size: 14px;
+  }
+
+  #login {
+  width: 320px;
+  margin: auto;
+  padding-bottom: 15px;
+  }
+
+form .input {
+  background: #fbfbfb;
+  font-size: 24px;
+  line-height: 1;
+  width: 100%;
+  padding: 3px;
+  margin: 0px 6px 5px 0;
+  outline: none;
+  border: 1px solid #d9d9d9;
+
+  }
+  
+form .input:focus {
+  border: 1px solid #4e63a6;
+  }
+
+form .input2 {
+  width: 350px;
+  background: #fbfbfb;
+  font-size: 22px;
+  line-height: 1;
+  padding: 3px;
+  margin: 5px 6px 5px 0;
+  outline: none;
+  border: 1px solid #d9d9d9;
+
+  }
+
+
+form .input2:focus {
+  border: 1px solid #4e63a6;
+  }
+
+  .button{
+  border: solid 1px #15265a;
+  background: #6070a0;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius:4px;
+  float: right;
+  cursor: pointer;
+  }
+
+  .button:hover{
+  background: #4a5c93;
+  }
+
+  .button2{
+  border: solid 1px #15265a;
+  background: #535a61;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius:4px;
+  cursor: pointer;
+  }
+
+  .button2:hover{
+  background: #4a5c93;
+  }
 
 .right
 
@@ -21,13 +162,12 @@ float: left;
 .center
 
  {
-
    position: fixed;
    top: 20%;
    left: 45%;
    margin-top: -50px;
    margin-left: -100px;
-   background: #868d94;
+   background: #969ea5;
    padding: 20px;
 }
 
@@ -45,20 +185,13 @@ float: left;
 
 }
 
+  a {
+   color: #983f3f;
+ font-weight: 400;
+  }
 
-input[type="text"] {
-   border: 1px solid #cccccc;
-   outline: none;я)
-   color: #cccccc;
-   font-size: 20px;
-   font-family: Tahoma;
-}
 
-a
-{
 
-color:black;
-}
 table { width: 550px; border-collapse: collapse; margin: 0px auto; background: #E6E6E6; }
 td { padding: 5px; text-align: center; vertical-align: middle; }
 .buttons { width: auto; border: double 1px #666666; background: #D6D6D6; }
@@ -86,23 +219,4 @@ width: 500px;
 margin-right: auto;
 margin-left: auto;
 */
-}
-
-
-.b-popup{
-    width:100%;
-    min-height:130%;
-    background-color: rgba(0,0,0,0.5);
-    overflow:hidden;
-    position:fixed;
-    top:0px;
-}
-.b-popup .b-popup-content{
-    margin:40px auto 0px auto;
-    width:400px;
-    height: 450px;
-    padding:10px;
-    background-color: #c5c5c5;
-    border-radius:5px;
-    box-shadow: 0px 0px 10px #000;
 }

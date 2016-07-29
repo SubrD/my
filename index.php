@@ -1,7 +1,7 @@
 <?php
-require_once "captcha.php";
-?>
+require_once "include/captcha.php";
 
+?>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,46 +10,46 @@ require_once "captcha.php";
 <head>
   <title>Форма</title>
 		
-<!--<script src="js/jquery.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"> </script>
 <script src="js/mygeo.js"></script>
 
  </head>
- <body>
+<body class = "coolpages">
+
+<?php
+
+if(!isset($_SESSION["session_username"])):
+header("location:login.php");
+else:
+
+?>
+
+
+
 
 <div class = center>
 
 <form action=process.php method="post" onsubmit="return process_form(this)" enctype="multipart/form-data">
-Напишите отзыв:
-
-<input type = "text" name="msg1" id="msgid"/>
-<br><br>
-
-Подпишитесь:
-<input type = "text" name="name" id="nameid"/>
-<br><br>
-Загрузите ваш аватар: <input type="file" name="filename">
-<br><br>
-
-Ваше раположение:
-<input type="text" name="geo" id="geoid" />
-<br><br>
-
-Введите капчу:
-
-<input type="text" name="norobot" style="width: 50px" /><input type ="submit" id="submitid" Click here/>
-
-<br><br><span style="background:white; font-size: 27px; "><?=$_SESSION['outputrand'] ?></span>
-
-
-
-
-
-</form>
-
+<p>Напишите отзыв:<br>
+<input class="input2" type="text" name="msg1" id="msgid" /></p>
+<p>Подпишитесь:<br>
+<input class="input2" type="text" name="name" id="nameid"/></p>
+<p>Загрузите ваш аватар:<br>
+<input type="file" name="filename" style="margin-top: 4px"></p>
+<p>Ваше раположение:<br>
+<input class="input2" type="text" name="geo" id="geoid" /></p>
+<p>Введите капчу:<br>
+<span style="background:white; font-size: 36px; margin-right: 10px; "><?=$_SESSION['outputrand'] ?></span><input class="input2" type="text" name="norobot" style="width: 50px" /><input type ="submit" id="submitid" class="button2" value="Sign in"/></p></form>
 <a href="submitions.php" name="test">Посмотреть отзывы</a> 
 
+</div>
 
+<div class="b-popup" onclick="javascript:PopUpHide();" id="popup2">
+<div class="b-popup-content2" >
+<h2>Добро пожаловать, <span><?php echo $_SESSION['session_username'];?>! </span></h2>
+  <p><a href="logout.php">Выйти</a> из системы</p>
+    </div>
 </div>
 
 <br>
@@ -62,12 +62,9 @@ require_once "captcha.php";
 
 <script>
 
-
-
 var process_form = document.getElementById("submitid").onclick
 process_form = function(event)
 {
-
 var name = document.getElementById("nameid").value;
 var msg1 = document.getElementById("msgid").value;
 
@@ -79,7 +76,18 @@ return false;
 }
 }
 
+$(document).ready(function(){
+    PopUpShow();
+});
+function PopUpShow(){
+    $("#popup2").show();
+}
+function PopUpHide(){
+    $("#popup2").hide();
+}
+
  </script>
 
  </body>
 
+<?php endif; ?>
