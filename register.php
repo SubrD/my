@@ -2,15 +2,25 @@
 
 <?php 
 
-include("include/header.php");
+if(!isset($_SESSION)){
+    session_start();
+}
 include("include/connectsql.php");
 
 ?>
-
+<!DOCTYPE html>
+	<html lang="en">
+<head>
+ <meta charset="utf-8">
+<title> login </title>
+<link href="style.css" media="screen" rel="stylesheet">
+	</head>
+	
+   <body>
 <div class="container mregister">
 <div id="login">
  <h1>Registration form</h1>
-<form action="register.php" id="registerform" method="post" name="registerform">
+	<form action="register.php" id="registerform" method="post" name="registerform">
 <p><label for="user_pass">E-mail<br>
 <input class="input" id="email" name="email" size="32" type="email" value=""></label></p>
 <p><label for="user_pass">Username<br>
@@ -18,18 +28,17 @@ include("include/connectsql.php");
 <p><label for="user_pass">Password<br>
 <input class="input" id="password" name="password" size="32"   type="password" value=""></label></p>
 <p class="submit"><input class="button" id="register" name= "register" type="submit" value="Register now!"></p>
-	  <p class="regtext">Already registered? <a href= "login.php"><br>Sign in!</a></p>
- </form>
-</div>
-</div>
+<p class="regtext">Already registered? <a href= "login.php"><br>Sign in!</a></p>
+	</form>
+	</div>
+	</div>
 </body>
 </html>
 
 <?php
+	if(isset($_POST["register"]))
+{
 	
-	if(isset($_POST["register"])){
-	
-
 	//nice one!
 	if(!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) {
  
@@ -46,6 +55,7 @@ if($numrows==0)
 	$message = "Account Successfully Created";
 } else {
  $message = "Failed to insert data information!";
+ myerror('users_db',$link);
   }
 	} else {
 	$message = "That username already exists! Please try another one!";

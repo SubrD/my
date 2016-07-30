@@ -52,6 +52,7 @@ echo ("</table></div>\n");
 <div class="b-popup" id="popup1">
 
 <div class="b-popup-content" id="map" >
+<div id='p_test'></div>
     </div>
 </div>
 
@@ -71,28 +72,34 @@ function PopUpHide(){
 
 
 
-function showme(str_arg) {
-var arr = str_arg.split(',');
-var tempvar = parseFloat(arr[0]);
-var tempvar2 = parseFloat(arr[1]);
+ function showme(str_arg)
+{
+
+ var arr = str_arg.split(',');
+ var tempvar = parseFloat(arr[0]);
+ var tempvar2 = parseFloat(arr[1]);
 
 
-      ymaps.ready(function(){
-        var myMap = new ymaps.Map("map", {
-            center: [tempvar,tempvar2],
-            zoom: 10
-        });
-            var myPlacemark = new  ymaps.Placemark([tempvar, tempvar2]);
-            myMap.geoObjects.add(myPlacemark);
+ ymaps.ready(function() {
 
-            document.onclick = function () {
-if(event.target.nodeName !== 'YMAPS'){
-        myMap.destroy();
-        PopUpHide();
-                                      }
-                                            }
-                                                  })
-PopUpShow();
+ var myMap = new ymaps.Map("map", {
+     center: [tempvar,tempvar2],
+     zoom: 10
+});
+ var myPlacemark = new  ymaps.Placemark([tempvar, tempvar2]);
+ myMap.geoObjects.add(myPlacemark);
+ document.onclick = function (event) 
+{
+  //document.getElementById('p_test').innerHTML = event.target.nodeName;
+  if(event.target.nodeName !== 'YMAPS')
+  {
+    myMap.destroy();
+    PopUpHide();
+  }
+ }
+})
+
+  PopUpShow();
 
 }
 

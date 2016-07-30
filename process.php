@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 if(!isset($_SESSION["session_username"])):
 header("location:login.php");
 else:
@@ -12,7 +14,6 @@ else:
 	
 	include 'include/connectsql.php';
     include 'include/upload.php';
-    include 'include/table_output.php';
 
 
 	if (md5($_POST['norobot']) == $_SESSION['rand'])	{ 

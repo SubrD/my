@@ -1,10 +1,21 @@
 <?php 
 
-include("include/header.php");
+if(!isset($_SESSION)){
+    session_start();
+    $_SESSION['pop1'] = 1;
+}
 include("include/connectsql.php");
 
 ?>
-
+<!DOCTYPE html>
+	<html lang="en">
+<head>
+ <meta charset="utf-8">
+<title> login </title>
+<link href="style.css" media="screen" rel="stylesheet">
+	</head>
+	
+   <body>
 <div class="container mlogin">
 <div id="login">
 <h1>Enter</h1>
@@ -25,7 +36,6 @@ type="text" value=""></label></p>
 </html>
 
 <?php
-	session_start();
 
 	
 	if(isset($_SESSION["session_username"])){
